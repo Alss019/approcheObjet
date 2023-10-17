@@ -1,10 +1,11 @@
 package maps;
 
+import java.util.Comparator;
 import java.util.HashMap;
 
 import listes.Ville;
 
-public class MapVille {
+public class MapVille implements Comparator<Ville>{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -39,6 +40,12 @@ public class MapVille {
 		}
 		
 		
+	}
+
+	@Override
+	public int compare(Ville o1, Ville o2) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
