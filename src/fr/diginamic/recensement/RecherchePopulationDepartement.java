@@ -1,6 +1,5 @@
 package fr.diginamic.recensement;
 
-import java.text.Format;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,8 +9,8 @@ public class RecherchePopulationDepartement extends MenuService{
 		
 		// Création de la liste des villes du département recherché
 		ArrayList<Ville> listeVille = new ArrayList<>();
-		System.out.println("\n/////////////////////////////////////////\n");
-		System.out.println("Saisir ci-dessous le code du département recherché :");
+		System.out.println("\n================================================\n");
+		System.out.println("Saisir ci-dessous le numéro du département recherché :");
 		String depRecherche = scanner.next();
 		for (Ville v: recensement.getVilles()) {
 			if (v.getCodeDep().equalsIgnoreCase(depRecherche)) {
@@ -23,7 +22,7 @@ public class RecherchePopulationDepartement extends MenuService{
 			for (Ville v: listeVille) {
 				populationTotale += v.getPopulationTotale();
 			}
-			System.out.println("\nPopulation totale du département " + depRecherche + " : "+ populationTotale  + " hab.");
+			System.out.println("\nPopulation totale du département " + depRecherche + " : "+ populationTotale  + " habitants\n");
 		} else {
 			System.out.println("\nLe département demandé n'existe pas !");
 		}

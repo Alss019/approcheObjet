@@ -8,9 +8,9 @@ public class RecherchePopulationRegion extends MenuService{
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
 		
-		// Création de la liste des villes du département recherché
+		// Création de la liste des villes de la region recherché
 		ArrayList<Ville> villes = new ArrayList<>();
-		System.out.println("\n/////////////////////////////////////////\n");
+		System.out.println("\n================================================\n");
 		System.out.println("Saisir ci-dessous le nom de la region recherché :");
 		String regionRecherche = scanner.next();
 		for (Ville v: recensement.getVilles()) {
@@ -23,9 +23,10 @@ public class RecherchePopulationRegion extends MenuService{
 			for (Ville v: villes) {
 				populationTotale += v.getPopulationTotale();
 			}
-			System.out.println("\nPopulation totale du département " + regionRecherche + " : "+ populationTotale  + " hab.");
+			System.out.println("\nPopulation totale de la région " + regionRecherche + " : "+ populationTotale  + " habitants");
 		} else {
 			System.out.println("\nLe département demandé n'existe pas !");
 		}
+		System.out.println("\n================================================\n");
 	}
 }

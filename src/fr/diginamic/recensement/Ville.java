@@ -64,6 +64,6 @@ public class Ville {
 
 	@Override
 	public String toString() {
-		return nom + " (" + codeDep + ") " + nomRegion.toUpperCase() + " : " +populationTotale + " hab.";
+		return nom + " (" + codeDep + ") " + nomRegion.toUpperCase() + " : " +populationTotale + " habitant";
 	}
 }

@@ -15,18 +15,7 @@ public class Application {
         int choix = 0;
  
         while(choix != 9){
-        	System.out.println("Menu :\n" + 
-        "1. Population d’une ville \n" +
-        "2. Population d’un département\n" +
-        "3. Population d’une région\n" +
-        "4. Afficher les 10 régions les plus peuplées\n" +
-        "5. Afficher les 10 départements les plus peuplés\n" +
-        "6. Afficher les 10 villes les plus peuplées d’un département\n"+
-        "7. Afficher les 10 villes les plus peuplées d’une région\n"+
-        "8. Afficher les 10 villes les plus peuplées de France\n"+
-        "9. Sortir\n"+
-        "Entrez votre choix : "
-        );
+        	afficherMenu();
             choix = scanner.nextInt();
             scanner.nextLine();
 

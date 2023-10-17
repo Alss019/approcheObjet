@@ -24,16 +24,17 @@ public class RechercheTop10Departement extends MenuService{
 					listeDep.add(new Departement(m.getKey(), m.getValue()));
 				}
 				
-				// Tri de la liste de région
+				// Tri de la liste des départements
 				Collections.sort(listeDep, new ComparatorPopulationDepartement());
 				
-				// Affichage des 10 régions les plus peuplées
-				System.out.println("\n/////////////////////////////////////////\n");
+				// Affichage des 10 départements les plus peuplées
+				System.out.println("\n================================================\n");
 				System.out.println("Les 10 départements les plus peuplées sont :");
-				System.out.println("-----------------------------------------");
+				System.out.println("\n================================================\n");
 				for (int i = 0; i<10; i++) {
 					System.out.println((i+1) + " - " + listeDep.get(i));
 				}
+				System.out.println("\n================================================\n");
 	}
 
 }

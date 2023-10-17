@@ -18,7 +18,7 @@ public class RechercheTop10Region extends MenuService{
 			comptage.put(v.getNomRegion(), compteur);
 		}
 		
-		// Création d'une liste de département
+		// Création d'une liste de régions
 				ArrayList<Region> listeReg = new ArrayList<>();
 				for (Entry<String, Integer> m: comptage.entrySet()) {
 					listeReg.add(new Region(m.getKey(), m.getValue()));
@@ -28,11 +28,13 @@ public class RechercheTop10Region extends MenuService{
 				Collections.sort(listeReg, new ComparatorPopulationRegion());
 				
 				// Affichage des 10 régions les plus peuplées
-				System.out.println("\n/////////////////////////////////////////\n");
-				System.out.println("Les 10 départements les plus peuplées sont :");
-				System.out.println("-----------------------------------------");
+				System.out.println("\n================================================\n");
+				System.out.println("Les 10 régions les plus peuplées sont :");
+				System.out.println("\n================================================\n");
+				
 				for (int i = 0; i<10; i++) {
 					System.out.println((i+1) + " - " + listeReg.get(i));
 				}
+				System.out.println("\n================================================\n");
 	}
 }
