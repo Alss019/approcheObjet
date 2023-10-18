@@ -26,8 +26,11 @@ public class Combat {
                     if (personnage != null && personnage.getPv() > 0) {
                     	if(personnage.score  == 0) {
                     		Loup loup = new Loup();
+                    		System.out.println(loup);
                     	}if(personnage.score  == 1) {
                     		Gobelin gobelin = new Gobelin();
+                    	}if(personnage.score == 3) {
+                    		Troll troll = new Troll();
                     	}
                     } else {
                         System.out.println("Votre personnage est décédé. Il a obtenu le score de " + personnage.getScore() + " points. Veuillez créer un nouveau personnage.");
@@ -37,7 +40,7 @@ public class Combat {
                     if (personnage != null) {
                         System.out.println("Score : " + personnage.getScore());
                     } else {
-                        System.out.println("Aucun personnage créé.");
+                     System.out.println("Aucun personnage créé.");
                     }
                     break;
                 case 4:

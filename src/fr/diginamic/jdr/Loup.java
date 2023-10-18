@@ -12,5 +12,10 @@ public class Loup {
 		this.force = random.nextInt();
 		this.pv = random.nextInt();
 	}
+
+	@Override
+	public String toString() {
+		return "Loup [force=" + force + ", pv=" + pv + "]";
+	}
 	
 }

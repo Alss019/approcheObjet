@@ -6,47 +6,21 @@ public class Ville implements Comparable<Ville>{
 	
 	String nom;
 	float nbHabitant;
+	EnumContinent continent;
 	
-	public Ville(String nom, float nbHabitant) {
+	public Ville(String nom, float nbHabitant, EnumContinent continent) {
 		super();
 		this.nom = nom;
 		this.nbHabitant = nbHabitant;
-	}
-
-	/**
-	 * @return the nom
-	 */
-	public String getNom() {
-		return nom;
-	}
-
-	/**
-	 * @param nom the nom to set
-	 */
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	/**
-	 * @return the nbHabitant
-	 */
-	public float getNbHabitant() {
-		return nbHabitant;
-	}
-
-	/**
-	 * @param nbHabitant the nbHabitant to set
-	 */
-	public void setNbHabitant(float nbHabitant) {
-		this.nbHabitant = nbHabitant;
+		this.continent = continent;
 	}
 
 	@Override
 	public String toString() {
-		return "Ville{" +
-                "nom='" + nom + '\'' +
-                ", population=" + nbHabitant +
-                '}';
+		return 
+                "nom = " + nom + 
+                ", " + nbHabitant + "Hab"+
+                ", " + continent;
 	}
 
 //	@Override
@@ -77,6 +51,48 @@ public class Ville implements Comparable<Ville>{
 			return 1;
 		}
 		return 0;
+	}
+
+	/** Getter
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+	/** Setter
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	/** Getter
+	 * @return the nbHabitant
+	 */
+	public float getNbHabitant() {
+		return nbHabitant;
+	}
+
+	/** Setter
+	 * @param nbHabitant the nbHabitant to set
+	 */
+	public void setNbHabitant(float nbHabitant) {
+		this.nbHabitant = nbHabitant;
+	}
+
+	/** Getter
+	 * @return the continent
+	 */
+	public EnumContinent getContinent() {
+		return continent;
+	}
+
+	/** Setter
+	 * @param continent the continent to set
+	 */
+	public void setContinent(EnumContinent continent) {
+		this.continent = continent;
 	}
 	
 }
