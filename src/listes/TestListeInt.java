@@ -46,6 +46,7 @@ public class TestListeInt {
 			}
 		}
 		System.out.println("La liste avec que des chiffre positif : "+ liste);
+		
 	}
 
 }

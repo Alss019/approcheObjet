@@ -2,27 +2,31 @@ package listes;
 
 import java.util.Objects;
 
-import annotations.ToString;
-import utils.StringUtils;
-
-public class Ville implements Comparable<Ville>{
-	@ToString(uppercase=false, separator=" -> ")
-	private String nom;
-	@ToString(separator="Hab")
-	private float nbHabitant;
-
+public class Villes implements Comparable<Villes>{
 	
-	public Ville(String nom, float nbHabitant) {
+	String nom;
+	float nbHabitant;
+	EnumContinent continent;
+	
+	public Villes(String nom, float nbHabitant, EnumContinent continent) {
 		super();
 		this.nom = nom;
 		this.nbHabitant = nbHabitant;
+		this.continent = continent;
 	}
 
 	@Override
 	public String toString() {
-		return StringUtils.objectToString(this);
+		return 
+                "nom = " + nom + 
+                ", " + nbHabitant + "Hab"+
+                ", " + continent;
 	}
 
+//	@Override
+//	public int compareTo(Ville autreVille) {
+//		return this.nom.compareTo(autreVille.getNom());
+//	}
 	
 	@Override
 	public int hashCode() {
@@ -31,15 +35,15 @@ public class Ville implements Comparable<Ville>{
 
 	@Override
 	public boolean equals(Object obj) {
-		if(!(obj instanceof Ville)) {
+		if(!(obj instanceof Villes)) {
 			return false;
 		}
-		Ville other= (Ville) obj;
+		Villes other= (Villes) obj;
 		return Objects.equals(nom, other.getNom()) && nbHabitant == other.getNbHabitant();
 	}
 
 	@Override
-	public int compareTo(Ville autreVille) {
+	public int compareTo(Villes autreVille) {
 		if(this.nbHabitant > autreVille.getNbHabitant()) {
 			return -1;			
 		}
@@ -59,7 +63,6 @@ public class Ville implements Comparable<Ville>{
 	/** Setter
 	 * @param nom the nom to set
 	 */
-
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
@@ -74,9 +77,22 @@ public class Ville implements Comparable<Ville>{
 	/** Setter
 	 * @param nbHabitant the nbHabitant to set
 	 */
-
 	public void setNbHabitant(float nbHabitant) {
 		this.nbHabitant = nbHabitant;
+	}
+
+	/** Getter
+	 * @return the continent
+	 */
+	public EnumContinent getContinent() {
+		return continent;
+	}
+
+	/** Setter
+	 * @param continent the continent to set
+	 */
+	public void setContinent(EnumContinent continent) {
+		this.continent = continent;
 	}
 	
 }

@@ -1,11 +1,15 @@
 package fr.diginamic.jdr;
 
 import java.util.Scanner;
+import java.util.Random;
+
 
 public class Combat {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Personnage personnage = null;
+        Random random =new Random();
+        
 
         while (true) {
             System.out.println("Menu du jeu :");
@@ -26,6 +30,16 @@ public class Combat {
                     if (personnage != null && personnage.getPv() > 0) {
                     	if(personnage.score  == 0) {
                     		Loup loup = new Loup();
+                    		while(personnage.getPv() == 0 || loup.getPv() == 0) {
+                    			int attaque = personnage.getForce() + random.nextInt(1)+10;
+                    			int attaqueCrea = loup.getForce() + random.nextInt(1)+10;
+                    			int resultTour = 0;
+	                    			if(attaque > attaqueCrea) {
+	                    				resultTour= attaque - attaqueCrea;
+	                    				loup.setPv(resultTour);
+										System.out.println("vous avez infliger " + resultTour + "pv");
+	                    			}
+                    		}
                     		System.out.println(loup);
                     	}if(personnage.score  == 1) {
                     		Gobelin gobelin = new Gobelin();
