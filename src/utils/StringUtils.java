@@ -25,7 +25,6 @@ public class StringUtils {
 						result.append(stringValue).append(annotation.separator());
 					}
 				} catch (IllegalAccessException e) {
-					e.printStackTrace();
 				}
 			}
 		}

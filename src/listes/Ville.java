@@ -2,17 +2,19 @@ package listes;
 
 import java.util.Objects;
 
+import annotations.Rules;
 import annotations.ToString;
 import utils.StringUtils;
 
 public class Ville implements Comparable<Ville>{
-	@ToString(uppercase=false, separator=" -> ")
+	@ToString(uppercase=true, separator=" -> ")
 	private String nom;
+	@Rules(min = 0)
 	@ToString(separator="Hab")
-	private float nbHabitant;
+	private int nbHabitant;
 
 	
-	public Ville(String nom, float nbHabitant) {
+	public Ville(String nom, int nbHabitant) {
 		super();
 		this.nom = nom;
 		this.nbHabitant = nbHabitant;
@@ -75,7 +77,7 @@ public class Ville implements Comparable<Ville>{
 	 * @param nbHabitant the nbHabitant to set
 	 */
 
-	public void setNbHabitant(float nbHabitant) {
+	public void setNbHabitant(int nbHabitant) {
 		this.nbHabitant = nbHabitant;
 	}
 	

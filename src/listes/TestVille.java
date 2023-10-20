@@ -4,19 +4,33 @@ import java.util.ArrayList;
 
 import java.util.Iterator;
 
+import utils.ValidationException;
+import utils.Valide;
+
 public class TestVille {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+			throws ValidationException, IllegalArgumentException, IllegalAccessException {
 		// TODO Auto-generated method stub
 		ArrayList<Ville> liste = new ArrayList<>();
-		liste.add(new Ville("Nice", 343000));
-		liste.add(new Ville("Carcassonne", 47800));
+		liste.add(new Ville("Nice", 3430000));
+		liste.add(new Ville("Carcassonne", -1));
 		liste.add(new Ville("Narbonne", 53400));
-		liste.add(new Ville("Lyon", 484000));
+		liste.add(new Ville("Lyon", -1));
 		liste.add(new Ville("Foix", 9700));
-		liste.add(new Ville("Pau", 77200));
+		liste.add(new Ville("Pau", -1));
 		liste.add(new Ville("Marseille", 850700));
 		liste.add(new Ville("Tarbes", 40600));
+
+
+		for (Ville ville : liste) {
+			try {
+				Valide.valider(ville);
+				System.out.println(ville);
+			} catch (ValidationException e) {
+				System.out.println("Erreur de validation : " + e.getMessage());
+			}
+		}
 
 		Ville villeMax = null;
 		float populationMax = 0;
@@ -27,7 +41,7 @@ public class TestVille {
 				villeMax = ville;
 			}
 		}
-		System.out.println("La ville la plus peuplé " + villeMax.getNbHabitant());
+		System.out.println("La ville la plus peuplé est " + villeMax.getNom() + " avec " + villeMax.getNbHabitant());
 
 		Ville villeMin = null;
 		float populationMin = liste.get(0).getNbHabitant();
@@ -44,15 +58,6 @@ public class TestVille {
 			if (ville == villeMin) {
 				iter.remove();
 			}
-		}
-		for (Ville ville : liste) {
-			if (ville.getNbHabitant() < 100000) {
-
-				ville.setNom(ville.getNom().toUpperCase());
-			}
-		}
-		for (Ville ville : liste) {
-			System.out.println(ville);
 		}
 
 	}
