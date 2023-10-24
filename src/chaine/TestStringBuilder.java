@@ -18,6 +18,7 @@ public class TestStringBuilder {
 		System.out.println("Temps écoulé en millisecondes :" + (fin - debut) + "ms");
 		System.out.println("-------------------------");
 
+
 		String string = "";
 		debut = System.currentTimeMillis();
 		

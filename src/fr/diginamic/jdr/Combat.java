@@ -64,6 +64,7 @@ public class Combat {
                 default:
                     System.out.println("Choix invalide.");
             }
-        }
+            scanner.close();
+            }
     }
 }
